@@ -1,3 +1,7 @@
+
+npm i json-loader --save-dev
+
+
 # Migros Hackathon Starter Template 
 
 This repository is a starter template, originally designed for the Migros Hack Challenge __"Digital Product Twins"__ at HackZurich 2020.
