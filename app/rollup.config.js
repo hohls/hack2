@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import replace from '@rollup/plugin-replace';
 
+
 const production = !process.env.ROLLUP_WATCH;
 const api = 'http://localhost:7071/api';
 const API = process.env.API || production ? '/api' : api;
@@ -19,6 +20,7 @@ export default {
     file: 'public/build/bundle.js',
   },
   plugins: [
+
     replace({
       // 2 level deep object should be stringify
       process: JSON.stringify({
@@ -49,7 +51,7 @@ export default {
       dedupe: ['svelte'],
     }),
     commonjs(),
-
+  
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),
