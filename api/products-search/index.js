@@ -43,7 +43,7 @@ module.exports = async function (context, req) {
       response = await axios.get(`${endpoint}/products`, config);
       productList = response.data.products;
     } else {
-      config.params.gtins = (req.query.id || undefined);
+      config.params.gtins = req.query.id;
       config.params.limit = 1;
       // if "id" param specified:  do an exact "byID" lookup of a product
       response = await axios.get(`${endpoint}/products`, config);
