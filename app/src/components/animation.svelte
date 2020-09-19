@@ -83,7 +83,6 @@
   }
 </style>
 
-<<<<<<< HEAD
 
 <div class="container-fluid">
 	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
@@ -97,17 +96,5 @@
 
 <img src={src} alt="rivella">
  </div>
-
- </div>
-
-
-
-=======
-<div class="component">
-  <div class="centered" in:spin={{ duration: 8000 }} out:fade>
-    <span>Animation!</span>
-  </div>
->>>>>>> 7ef9f0d77f2725e2ecb6ffb7420c4893e487ca32
-
-  <button on:click={closeMe}> Ask Me! </button>
+ 
 </div>

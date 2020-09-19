@@ -3,7 +3,7 @@
 	import Button from './Button.svelte'
 	let question = 'hole von json';
   let a1 = "OK"
-  let numberWins;
+  export let numberWins;
   import API from '../store/config';
 
    export let closeHandler = () => {};

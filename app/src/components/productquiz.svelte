@@ -29,7 +29,7 @@ var quizTop =   {
           result: "1"
         },
         {
-          question: "wie sait me?",
+          question: "wie sait me 22222?",
           answers:["hallo", "hoi", "hoi2", "hoi3"],
           result: "3"
         }
@@ -63,15 +63,14 @@ var quizTop =   {
  export let prod_id;
 
 	let question = 'hole von json';
-  let user_answer = -1;
+ 
   let anser_id;
   let a1 = "a1 von json hole";
   let a2 = "a2 von json hole";
   let a3 = "a3 von json hole";
   let a4 = "a4 von json hole";
 
-
-	prod_id = 10; // event.detail.prod_id;
+ 
  let  prod_category =  0;  
  let  prod_cat_name =  "Mehl";
   let questionId = 0;
@@ -82,15 +81,14 @@ var quizTop =   {
   //to do loop for next questionId
   for (var i = 0; i < quiz.length; i++){
   if (quiz[i].Category == prod_cat_name){
-
-    question = quiz[i].Quiz[questionId].question;
-      a1 = quiz[i].Quiz[questionId].answers[0];
-      a2 = quiz[i].Quiz[questionId].answers[1];
-      a3 = quiz[i].Quiz[questionId].answers[2];
-      a4 = quiz[i].Quiz[questionId].answers[3];
+    question = quiz[i].Quiz[questionId%quiz[i].Category.length].question;
+      a1 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[0];
+      a2 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[1];
+      a3 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[2];
+      a4 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[3];
       
-      answerId=quiz[i].Quiz[questionId].result;
-      user_answer = quiz[i].Quiz[questionId].result;
+      answerId=quiz[i].Quiz[questionId%quiz[i].Category.length].result;
+    
       break;
     }
   };
@@ -99,13 +97,11 @@ getQuestion();
  
 
 	function handleAnswer(event) {
-		var answer_id = event.detail.id;
-    if(answer_id==answerId) {//user_answer == answer_id){
+		let incomingId = event.detail.text;
+    if(incomingId==answerId) { 
       questionId++;
       numberWins++;
       getQuestion();
-    
-    
     }else{
       dispatch('message', {
         text: numberWins,
@@ -143,22 +139,21 @@ getQuestion();
                 </div>
                 <div class="card-body">
                  <h2>Question , {question}?</h2>
-
-              
+    
                
                 <Button id=0 on:message={handleAnswer}>
                   {a1}
                 </Button>
 
-                <Button id=1 on:message={handleAnswer}>
+                <Button id=1  on:message={handleAnswer}>
                   {a2}
                 </Button>
 
-                <Button id=2 on:message={handleAnswer}>
+                <Button id=2  on:message={handleAnswer}>
                   {a3}
                 </Button>
 
-                <Button id=3 on:message={handleAnswer}>
+                <Button id=3  on:message={handleAnswer}>
                   {a4}
                 </Button>
                 

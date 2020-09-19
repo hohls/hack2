@@ -65,7 +65,7 @@ let win ;
 
    {#if showPrize}
     <div transition:slide|local>
-      <Prize numberWins=win />
+      <Prize numberWins={win} />
     </div>
   {/if}
 
