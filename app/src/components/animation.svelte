@@ -1,7 +1,17 @@
-
  <script>
 	import { fade } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
+ 
+	 export let prod_id;
+
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+
+ function closeMe(){
+	dispatch('message', {
+        text: 1
+    });
+ };
 
 	let visible = true;
 
@@ -20,10 +30,14 @@
 					);`
 			}
 		};
-	}
+	};
+
 </script>
 
 <style>
+
+
+
 	.centered {
 		position: absolute;
 		left: 50%;
@@ -56,14 +70,15 @@
 		color: #bfc2c7;
 	}
 </style>
-
+<div class="component">
 	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
 		<span>Animation!</span>
     </div>
-    
-    <a class="nav-link" href="./quiz">
-        <button class='btn-bot'>Ask Me! </button></a>
-
+        <button class='btn-bot' on:click{closeMe}>
+		Ask Me! 
+		 </button>
+ 
+ </div>
 
 
 

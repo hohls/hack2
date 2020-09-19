@@ -1,63 +1,81 @@
 <script>
   import './styles.scss';
   import { Router, Link, Route } from 'svelte-routing';
-
+import { slide } from 'svelte/transition';
   import Home from './Home.svelte';
 
   import { NavBar, SideBar, PageNotFound, Redirect } from './components';
   import {
-    MigrosData,
-    MigrosProductSearch,
-    CustomVision,
-    FormRecognizer,
-    Chatbot,
-    BingMaps,
-    SpatialAnchors,
     Scanner,
     ProductQuiz,
     Anim,
     Prize,
   } from './components';
+  
 
   export let url = '';
+
+  let showScanner = true;
+  let showAnim = false;
+  let showProductQuiz = false;
+  let showPrize = false;
+
+  let prod_id_gl;
+let win ;
+
+
+
+ 
+ function closeAnim() {
+   showScanner = false;
+  showAnim = false; 
+  showProductQuiz=true };
+ 
+
+	function handleId(event) {
+		prod_id_gl = event.detail.text;
+    showScanner = false; showAnim=true
+    };
+
+	function handleWin(event) {
+		win = event.detail.text;
+   showScanner = false; 
+   showProductQuiz = false; 
+   showPrize=true
+    }
+
 </script>
 
 <Router {url}>
-  <!-- The left side -->
-  <SideBar />
+ 
 
-  <!-- The main content area -->
-  <div class="d-flex flex-column" id="content-wrapper">
-    <div id="content">
-      <!-- The top navbar -->
-      <NavBar />
-
-      <!-- Content area -->
-      <div class="container-fluid">
-        <Route path="/">
-          <Redirect path="/home" />
-        </Route>
-        <Route path="/home" component={Home} />
-
-        <Route path="/scanner" component={Scanner} />
-        <Route path="/data" component={MigrosData} />
-        <Route path="/customvision" component={CustomVision} />
-        <Route path="/formrecognizer" component={FormRecognizer} />
-        <Route path="/chatbot" component={Chatbot} />
-        <Route path="/maps" component={BingMaps} />
-        <Route path="/spatialanchors" component={SpatialAnchors} />
-        <Route path="/quiz" component={ProductQuiz} />
-        <Route path="/anim" component={Anim} />
-        <Route path="/prize" component={Prize} />
-
-        <Route path="/productsearch" component={MigrosProductSearch} />
-
-        <!--
-          <Route path="/scandit" component={Scandit} />
-        -->
-
-        <Route path="**" component={PageNotFound} />
-      </div>
+<div class="container">
+  {#if showScanner}
+    <div transition:slide|local>
+      <Scanner on:message={handleId} />
     </div>
-  </div>
+  {/if}
+
+  {#if showAnim}
+    <div transition:slide|local>
+      <Anim on:message={closeAnim} prod_id=prod_id_gl />
+    </div>
+  {/if}
+
+  {#if showProductQuiz}
+    <div transition:slide|local>
+      <ProductQuiz on:message={handleWin} prod_id=prod_id_gl  />
+    </div>
+  {/if}
+
+   {#if showPrize}
+    <div transition:slide|local>
+      <Prize />
+    </div>
+  {/if}
+
+
+</div>
+
+
 </Router>

@@ -4,6 +4,10 @@
 	let question = 'hole von json';
   let a1 = "OK"
   import API from '../store/config';
+
+   export let closeHandler = () => {};
+ export let prod_id;
+
 </script>
 
 

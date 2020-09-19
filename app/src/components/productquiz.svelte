@@ -1,6 +1,9 @@
 <script>
 import { createEventDispatcher } from 'svelte';
 import Button from './Button.svelte';
+
+import prod_id_gl from './animation.svelte';
+ 
  
 var quiz =   {
   "Quizliste":[
@@ -55,10 +58,11 @@ var quiz =   {
 
 //const quiz = JSON.parse('../../data/quizquestions.json');
 
+ 
+
  const dispatch = createEventDispatcher();
 
-
-  let prod_id = -1;
+ export let prod_id;
 
 	let question = 'hole von json';
   let user_answer = -1;
@@ -69,7 +73,6 @@ var quiz =   {
   let a4 = "a4 von json hole";
 
 
-	function newProd(event) {
 	prod_id = 10; // event.detail.prod_id;
   prod_category =  0;  
   prod_cat_name =  "Mehl";
@@ -85,18 +88,18 @@ var quiz =   {
       user_answer = quiz[i].Quiz.result;
       
     }
-	}
-
-  }; //end newProd
+	};
+ 
 
 	function handleAnswer(event) {
-		answer_id = event.detail.text;
-    if(user_answer == answer_id){
+		var answer_id = event.detail.id;
+    if(1) {//user_answer == answer_id){
          dispatch('message', {
         text: 'win',
         prod_id: prod_id
     });   
     }
+    
 	}
 
 
@@ -117,7 +120,7 @@ var quiz =   {
 	}
 </style>
 
-<div class="container-fluid">
+<div class="component">
     <div class="row">
         <div class="col">
             <!-- Start: Basic Card -->
@@ -127,6 +130,8 @@ var quiz =   {
                 </div>
                 <div class="card-body">
                  <h2>Question 1, {question}?</h2>
+
+              
                
                 <Button on:message={handleAnswer}>
                   {a1}

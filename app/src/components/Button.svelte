@@ -20,7 +20,7 @@ function sayHello() {
    }
 
     dispatch('message', {
-        text: 'id'
+        text: id
     });
 };
 
