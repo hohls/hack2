@@ -13,6 +13,7 @@
     Chatbot,
     BingMaps,
     SpatialAnchors,
+    ProductQuiz,
   } from './components';
 
 
@@ -43,6 +44,7 @@
         <Route path="/chatbot" component={Chatbot} />
         <Route path="/maps" component={BingMaps} />
         <Route path="/spatialanchors" component={SpatialAnchors} />
+        <Route path="/quiz" component={ProductQuiz} />
 
         <Route path="/productsearch" component={MigrosProductSearch} />
 

@@ -23,7 +23,7 @@ import FormRecognizer from './azure-form-recognizer.svelte';
 import Chatbot from './azure-chatbot.svelte';
 import BingMaps from './azure-bing-maps.svelte';
 import SpatialAnchors from './azure-spatial-anchors.svelte';
-
+import ProductQuiz from './productquiz.svelte';
 
 
 
@@ -38,6 +38,7 @@ export {
   Chatbot,
   BingMaps,
   SpatialAnchors,
+  ProductQuiz,
 
   MigrosData,
   MigrosProductSearch,

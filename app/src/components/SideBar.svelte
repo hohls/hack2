@@ -72,6 +72,10 @@
           <i class="fas fa-globe" />
           <span>Bing Maps</span>
         </Link>
+         <Link to="/quiz" {getProps}>
+          <i class="fas fa-globe" />
+          <span>Product Quiz</span>
+        </Link>
         <Link to="/spatialanchors" {getProps}>
           <i class="fas fa-map-marked-alt" />
           <span>Spatial Anchors (AR/VR)</span>
