@@ -3,56 +3,56 @@ import { createEventDispatcher } from 'svelte';
 import Button from './Button.svelte';
  
  
-var quiz =   {
-  "Quizliste":[
+var quizTop =   {
+  Quizliste:[
    {
-     "Category": "Gemuese",
-    "Quiz":  [
+     Category: "Gemuese",
+    Quiz:  [
       {
-        "question": "wie sait me?",
-        "answers":["hallo", "hoi", "hoi2", "hoi3"],
-        "result": "1"
+        question: "wie sait me?",
+        answers:["hallo", "hoi", "hoi2", "hoi3"],
+        result: "1"
       },
       {
-        "question": "wie sait me?",
-        "answers":["hallo", "hoi", "hoi2", "hoi3"],
-        "result": "1"
+        question: "wie sait me?",
+        answers:["hallo", "hoi", "hoi2", "hoi3"],
+        result: "1"
       }
     ]
     },
     {
-    "Category": "Mehl",
-    "Quiz":  [
+    Category: "Mehl",
+    Quiz:  [
         {
-          "question": "wie sait me?",
-          "answers":["hallo", "hoi", "hoi2", "hoi3"],
-          "result": "1"
+          question: "wie sait me?",
+          answers:["hallo", "hoi", "hoi2", "hoi3"],
+          result: "1"
         },
         {
-          "question": "wie sait me?",
-          "answers":["hallo", "hoi", "hoi2", "hoi3"],
-          "result": "3"
+          question: "wie sait me?",
+          answers:["hallo", "hoi", "hoi2", "hoi3"],
+          result: "3"
         }
       ]
     },
       {
-        "Category": "Milch",
-        "Quiz":  [
+        Category: "Milch",
+        Quiz:  [
         {
-          "question": "wie sait me?",
-          "answers":["hallo", "hoi", "hoi2", "hoi3"],
-          "result": "1"
+          question: "wie sait me?",
+          answers:["hallo", "hoi", "hoi2", "hoi3"],
+          result: "1"
         },
         {
-          "question": "wie sait me?",
-          "answers":["hallo", "hoi", "hoi2", "hoi3"],
-          "result": "2"
+          question: "wie sait me?",
+          answers:["hallo", "hoi", "hoi2", "hoi3"],
+          result: "2"
         }
       ]
     }
 ]
 };
-  
+  var quiz = quizTop.Quizliste;
 
 //const quiz = JSON.parse('../../data/quizquestions.json');
 
@@ -74,16 +74,22 @@ var quiz =   {
 	prod_id = 10; // event.detail.prod_id;
  let  prod_category =  0;  
  let  prod_cat_name =  "Mehl";
+  let questionId = 0;
 
+  //to do loop for next questionId
   for (var i = 0; i < quiz.length; i++){
   if (quiz[i].Category == prod_cat_name){
-      a1 = quiz[i].Quiz.answers[0];
-      a2 = quiz[i].Quiz.answers[1];
-      a3 = quiz[i].Quiz.answers[2];
-      a4 = quiz[i].Quiz.answers[3];
+
+    question = quiz[i].Quiz[questionId].question;
+
+
+      a1 = quiz[i].Quiz[questionId].answers[0];
+      a2 = quiz[i].Quiz[questionId].answers[1];
+      a3 = quiz[i].Quiz[questionId].answers[2];
+      a4 = quiz[i].Quiz[questionId].answers[3];
       
-      question = quiz[i].Quiz.question;
-      user_answer = quiz[i].Quiz.result;
+      
+      user_answer = quiz[i].Quiz[questionId].result;
       
     }
 	};
