@@ -1,24 +1,17 @@
-
-
 <script>
-let click_count = 0;
-let id;
+ 
+export let id;
 
 import { createEventDispatcher } from 'svelte';
 
 const dispatch = createEventDispatcher();
 
 function sayHello() {
-     click_count =1;
-   if(click_count==1)
+ 
+   if(0)
    {
    this.style.backgroundColor= '#94ce2d'
-
-   }
-   else{
-    this.style.backgroundColor= '#f76027'
-   }
-
+  	}
     dispatch('message', {
         text: id
     });
@@ -43,7 +36,7 @@ function sayHello() {
 	}
     button:hover {
 		background-position: 0;
-		color: #aaa;
+		color: #94ce2d;
 	}
 
 	:global(body.dark-mode) button {

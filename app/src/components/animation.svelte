@@ -1,13 +1,17 @@
-<script>
-  import { fade } from 'svelte/transition';
-  import { elasticOut } from 'svelte/easing';
-  import { createEventDispatcher } from 'svelte';
-  import API from '../store/config';
-  const dispatch = createEventDispatcher();
+ <script>
+	import { fade } from 'svelte/transition';
+	import { elasticOut } from 'svelte/easing';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
 
-  function closeMe() {
-    dispatch('message', {
-      text: 1,
+	let src = "https://rivella.ch/static/f852b4e3b9a1c94ca0876e329a4f4c15/4735b/rivella-rot-detail-1.png";
+
+
+
+ function closeMe(){
+	 
+	dispatch('message', {
+        text: 1
     });
   }
 
@@ -78,10 +82,23 @@
   }
 </style>
 
-<div class="component">
-  <div class="centered" in:spin={{ duration: 8000 }} out:fade>
-    <span>Animation!</span>
-  </div>
 
-  <button on:click={closeMe}> Ask Me! </button>
+<div class="container-fluid">
+	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
+		<span><img src={src} alt="rivella"   height="600" /></span>
+    </div>
+       <div class="centered">
+ 		<button on:click={closeMe}>
+		 Ask Me! 
+		 </button>
+
+ 
+	
+	
+ 
+	
+ </div>
+
+   
 </div>
+

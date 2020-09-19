@@ -8,50 +8,100 @@ var quizTop =   {
    {
      Category: "Gemuese",
     Quiz:  [
+    {
+      question: "how many percent water are cucumber?",
+      answers:["96%", "60%", "2%", "80%"],
+      result: "1"
+    },
+    {
+      question: "bananas are members of which family?",
+      answers:["Berries", "Palm", "Cactus", "Grape"],
+      result: "1"
+      },
+    {
+      question: "strawberries are members of which family?",
+      answers:["Rose", "Palm", "Cactus", "Grape"],
+      result: "1"
+    },
+    {
+      question: "how much DNA do humans share with bananas?",
+      answers:["60%", "1%", "30%", "99%"],
+      result: "1"
+    },
+    {
+      question: "calorie for calorie broccoli contains more protein than..?",
+      answers:["steak", "apple", "sugar", "coffee"],
+      result: "1"
+    },
+    {
+      question: "pistachios are actually..?",
+      answers:["fruits", "roots", "nuts", "flowers"],
+      result: "1"
+    },
+    {
+      question: "how many percent of all hazelnuts end up in Nutella?",
+      answers:["5%", "10%", "25%", "50%"],
+      result: "3"
+    }
+    ]
+    },
+
+    {
+    Category: "Fastfood",
+    Quiz:  [
+    {
+      question: "how invented the sandwich?",
+      answers:["Earl of sandwich", "Thomas Eddison", "Napoleon", "Queen Marry"],
+      result: "1"
+      },
       {
-        question: "wie sait me?",
-        answers:["hallo", "hoi", "hoi2", "hoi3"],
+        question: "how many blévitas are eaten per year?",
+        answers:["500 million", "1 million", "1 million", "3"],
+        result: "1"
+        },
+          {
+          question: "how many liter migros ice tea are consumed per year?",
+          answers:["60 million", "10 million", "2 million", "30 million"],
+          result: "1"
+        },
+          {
+        question: "in the 1800's ketchup was used as..?",
+        answers:["medicine", "poison", "food", "paint"],
+        result: "1"
+        }
+
+      ]
+    },
+
+     {
+        Category: "Milch",
+        Quiz:  [
+           {
+          question: "How many percentage points of Rivella Red is milk serum ?",
+          answers:["35%", "38%", "52%", "95%"],
+          result: "1"
+        },
+        {
+          question: "when was chocolate seen the first time in bar form?",
+          answers:["1910", "1510", "2010", "1987"],
+          result: "1"
+        },
+      {
+        question: "what did the aztecs used chocolate for?",
+        answers:["currency", "paint", "poison", "food"],
         result: "1"
       },
       {
-        question: "wie sait me?",
-        answers:["hallo", "hoi", "hoi2", "hoi3"],
+        question: "where did french fries originate from?",
+        answers:["belgium", "france", "usa", "uk"],
         result: "1"
       }
-    ]
-    },
-    {
-    Category: "Mehl",
-    Quiz:  [
-        {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "1"
-        },
-        {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "3"
-        }
-      ]
-    },
-      {
-        Category: "Milch",
-        Quiz:  [
-        {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "1"
-        },
-        {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "2"
-        }
       ]
     }
 ]
 };
+
+
   var quiz = quizTop.Quizliste;
 
 //const quiz = JSON.parse('../../data/quizquestions.json');
@@ -63,17 +113,16 @@ var quizTop =   {
  export let prod_id;
 
 	let question = 'hole von json';
-  let user_answer = -1;
+ 
   let anser_id;
   let a1 = "a1 von json hole";
   let a2 = "a2 von json hole";
   let a3 = "a3 von json hole";
   let a4 = "a4 von json hole";
 
-
-	prod_id = 10; // event.detail.prod_id;
+ 
  let  prod_category =  0;  
- let  prod_cat_name =  "Mehl";
+ let  prod_cat_name =  "Milch";
   let questionId = 0;
   let answerId = 0;
   let numberWins=0;
@@ -82,16 +131,14 @@ var quizTop =   {
   //to do loop for next questionId
   for (var i = 0; i < quiz.length; i++){
   if (quiz[i].Category == prod_cat_name){
-
-    question = quiz[i].Quiz[questionId].question;
-
-      a1 = quiz[i].Quiz[questionId].answers[0];
-      a2 = quiz[i].Quiz[questionId].answers[1];
-      a3 = quiz[i].Quiz[questionId].answers[2];
-      a4 = quiz[i].Quiz[questionId].answers[3];
+    question = quiz[i].Quiz[questionId%quiz[i].Category.length].question;
+      a1 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[0];
+      a2 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[1];
+      a3 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[2];
+      a4 = quiz[i].Quiz[questionId%quiz[i].Category.length].answers[3];
       
-      answerId=quiz[i].Quiz[questionId].result;
-      user_answer = quiz[i].Quiz[questionId].result;
+      answerId=quiz[i].Quiz[questionId%quiz[i].Category.length].result;
+    
       break;
     }
   };
@@ -100,13 +147,11 @@ getQuestion();
  
 
 	function handleAnswer(event) {
-		var answer_id = event.detail.id;
-    if(answer_id==answerId) {//user_answer == answer_id){
+		let incomingId = event.detail.text;
+    if(incomingId==answerId) { 
       questionId++;
       numberWins++;
       getQuestion();
-    
-    
     }else{
       dispatch('message', {
         text: numberWins,
@@ -143,23 +188,22 @@ getQuestion();
                     <h6 class="text-primary m-0 font-weight-bold">Product Quiz</h6>
                 </div>
                 <div class="card-body">
-                 <h2>Question , {question}?</h2>
-
-              
+                 <h2 style="color:orange" >Question , {question} </h2>
+    
                
-                <Button id=0 on:message={handleAnswer}>
+                <Button  id=1 on:message={handleAnswer}>
                   {a1}
                 </Button>
 
-                <Button id=1 on:message={handleAnswer}>
+                <Button id=2  on:message={handleAnswer}>
                   {a2}
                 </Button>
 
-                <Button id=2 on:message={handleAnswer}>
+                <Button id=3  on:message={handleAnswer}>
                   {a3}
                 </Button>
 
-                <Button id=3 on:message={handleAnswer}>
+                <Button id=4  on:message={handleAnswer}>
                   {a4}
                 </Button>
                 
