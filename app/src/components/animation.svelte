@@ -40,7 +40,6 @@
       console.log(error);
     }
   }
-  console.log(prod_id);
   fetchProduct(prod_id).then(function (json) {
     console.log(json);
   });
