@@ -15,8 +15,8 @@ import { slide } from 'svelte/transition';
 
   export let url = '';
 
-  let showScanner = true;
-  let showAnim = false;
+  let showScanner = false;
+  let showAnim = true;
   let showProductQuiz = false;
   let showPrize = false;
 
@@ -49,7 +49,7 @@ let win ;
 <Router {url}>
  
 
-<div class="container">
+<div class="container-fluid">
   {#if showScanner}
     <div transition:slide|local>
       <Scanner on:message={handleId} />

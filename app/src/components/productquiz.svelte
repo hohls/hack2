@@ -81,13 +81,10 @@ var quizTop =   {
   if (quiz[i].Category == prod_cat_name){
 
     question = quiz[i].Quiz[questionId].question;
-
-
       a1 = quiz[i].Quiz[questionId].answers[0];
       a2 = quiz[i].Quiz[questionId].answers[1];
       a3 = quiz[i].Quiz[questionId].answers[2];
       a4 = quiz[i].Quiz[questionId].answers[3];
-      
       
       user_answer = quiz[i].Quiz[questionId].result;
       

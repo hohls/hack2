@@ -1,10 +1,13 @@
  <script>
 	import { fade } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
- import { createEventDispatcher } from 'svelte';
-const dispatch = createEventDispatcher();
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
 
- 
+	let src = '../../data/test.png';
+
+
+
  function closeMe(){
 	 
 	dispatch('message', {
@@ -73,14 +76,18 @@ export let prod_id;
 </style>
 
 
-<div class="component">
+<div class="container-fluid">
 	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
 		<span>Animation!</span>
     </div>
-       
+       <div class="centered">
  		<button on:click={closeMe}>
 		 Ask Me! 
 		 </button>
+
+
+<img src={src} alt="rivella">
+ </div>
 
  </div>
 
