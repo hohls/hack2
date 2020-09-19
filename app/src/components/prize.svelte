@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <p class="m-0"> </p>
            <h2>Congrats, you have won </h2>
-           <img src={src} alt = "3malCumulus"
+           <img src={src} alt = "3malCumulus">
             <Button>
               {a1}
             </Button>
