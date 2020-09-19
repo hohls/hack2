@@ -40,7 +40,7 @@ export {
   BingMaps,
   SpatialAnchors,
   ProductQuiz,
-  Anim
+  Anim,
 
   MigrosData,
   MigrosProductSearch,
