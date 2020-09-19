@@ -2,7 +2,8 @@
  <script>
 	import Button from './Button.svelte'
 	let question = 'hole von json';
-  let a1 = "a1 von json hole"
+  let a1 = "OK"
+  let src = '3facj.jpg';
 </script>
 
 
@@ -25,11 +26,12 @@
             <!-- Start: Basic Card -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="text-primary m-0 font-weight-bold">Animatioj</h6>
+                    <h6 class="text-primary m-0 font-weight-bold">Prize</h6>
                 </div>
                 <div class="card-body">
-                    <p class="m-0">Gif.</p>
-           <h2>Question 1, {question}?</h2>
+                    <p class="m-0"> </p>
+           <h2>Congrats, you have won </h2>
+           <img src={src} alt = "3malCumulus"
             <Button>
               {a1}
             </Button>

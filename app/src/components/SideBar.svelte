@@ -80,6 +80,10 @@
           <i class="fas fa-globe" />
           <span>Animation</span>
         </Link>
+        <Link to="/prize" {getProps}>
+          <i class="fas fa-globe" />
+          <span>Prize</span>
+        </Link>
         <Link to="/spatialanchors" {getProps}>
           <i class="fas fa-map-marked-alt" />
           <span>Spatial Anchors (AR/VR)</span>

@@ -2,8 +2,55 @@
  <script>
 	import Button from './Button.svelte'
 	let question = 'hole von json';
-  let a1 = "a1 von json hole"
+    let a1 = "a1 von json hole"
+	import { fade } from 'svelte/transition';
+	import { elasticOut } from 'svelte/easing';
+
+	let visible = true;
+
+	function spin(node, { duration }) {
+		return {
+			duration,
+			css: t => {
+				const eased = elasticOut(t);
+
+				return `
+					transform: scale(${eased}) rotate(${eased * 1080}deg);
+					color: hsl(
+						${~~(t * 360)},
+						${Math.min(100, 1000 - 1000 * t)}%,
+						${Math.min(50, 500 - 500 * t)}%
+					);`
+			}
+		};
+	}
 </script>
+
+<style>
+	.centered {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+
+	span {
+		position: absolute;
+		transform: translate(-50%,-50%);
+		font-size: 4em;
+	}
+</style>
+
+<label>
+	<input type="checkbox" bind:checked={visible}>
+	visible
+</label>
+
+{#if visible}
+	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
+		<span>Animation!</span>
+	</div>
+{/if}
 
 
 
@@ -19,20 +66,4 @@
 	}
 </style>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <!-- Start: Basic Card -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="text-primary m-0 font-weight-bold">Animation</h6>
-                </div>
-                <div class="card-body">
-                    <p class="m-0">Gif</p>
-                </div>
-            </div>
-            <!-- End: Basic Card -->
-        </div>
-    </div>
-</div>
 

@@ -14,7 +14,8 @@
     BingMaps,
     SpatialAnchors,
     ProductQuiz,
-    Anim
+    Anim,
+    Prize
   } from './components';
 import Animation from './components/animation.svelte';
 
@@ -48,6 +49,8 @@ import Animation from './components/animation.svelte';
         <Route path="/spatialanchors" component={SpatialAnchors} />
         <Route path="/quiz" component={ProductQuiz} />
         <Route path="/anim" component={Anim} />
+        <Route path="/prize" component={Prize} />
+
 
 
         <Route path="/productsearch" component={MigrosProductSearch} />
