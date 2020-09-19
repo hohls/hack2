@@ -1,17 +1,11 @@
 <script>
   import './styles.scss';
   import { Router, Link, Route } from 'svelte-routing';
-import { slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
   import Home from './Home.svelte';
 
   import { NavBar, SideBar, PageNotFound, Redirect } from './components';
-  import {
-    Scanner,
-    ProductQuiz,
-    Anim,
-    Prize,
-  } from './components';
-  
+  import { Scanner, ProductQuiz, Anim, Prize } from './components';
 
   export let url = '';
 
@@ -21,8 +15,8 @@ import { slide } from 'svelte/transition';
   let showPrize = false;
 
   let prod_id_gl;
-let win ;
 
+let win ;
 
 
  
@@ -38,10 +32,11 @@ let win ;
     };
 
 	function handleWin(event) {
-		win = event.detail.text;
+    win = event.detail.text;
+     
    showScanner = false; 
    showProductQuiz = false; 
-   showPrize=true
+   showPrize=true;
     }
 
 </script>
@@ -70,7 +65,7 @@ let win ;
 
    {#if showPrize}
     <div transition:slide|local>
-      <Prize />
+      <Prize numberWins=win />
     </div>
   {/if}
 
