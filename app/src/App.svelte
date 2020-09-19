@@ -18,7 +18,6 @@
     Anim,
     Prize,
   } from './components';
-  import Animation from './components/animation.svelte';
 
   export let url = '';
 </script>
