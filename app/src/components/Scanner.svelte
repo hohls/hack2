@@ -25,7 +25,7 @@ const dispatch = createEventDispatcher();
       .then((barcodePicker) => {
         // barcodePicker is ready here, show a message every time a barcode is scanned
         barcodePicker.on('scan', (scanResult) => {
-          alert();
+       
         dispatch('message', {
         text: scanResult.barcodes[0].data
           });

@@ -37,8 +37,8 @@
                     <p class="m-0"> </p>
 
  {#if {numberWins}> 0 }
-    <h2 style="color:orange"> >Congrats, you have won {numberWins} x Cumulus Points!</h2>
-    {:else}
+    <h2 style="color:orange"> Congrats, you have won {numberWins} x Cumulus Points!</h2>
+{:else}
     <h3 style="color:orange">Nice try! Try your luck with some other hidden products to win Cumulus Points!</h3>
   {/if}
              
