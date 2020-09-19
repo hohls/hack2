@@ -76,7 +76,7 @@
           <i class="fas fa-globe" />
           <span>Product Quiz</span>
         </Link>
-        <Link to="/animation" {getProps}>
+        <Link to="/anim" {getProps}>
           <i class="fas fa-globe" />
           <span>Animation</span>
         </Link>

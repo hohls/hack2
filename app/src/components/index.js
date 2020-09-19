@@ -24,6 +24,7 @@ import Chatbot from './azure-chatbot.svelte';
 import BingMaps from './azure-bing-maps.svelte';
 import SpatialAnchors from './azure-spatial-anchors.svelte';
 import ProductQuiz from './productquiz.svelte';
+import Anim from './animation.svelte';
 
 
 
@@ -39,6 +40,7 @@ export {
   BingMaps,
   SpatialAnchors,
   ProductQuiz,
+  Anim
 
   MigrosData,
   MigrosProductSearch,

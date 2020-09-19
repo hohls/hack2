@@ -29,10 +29,6 @@
                 </div>
                 <div class="card-body">
                     <p class="m-0">Gif</p>
-           <h2>Question 1, {question}?</h2>
-            <Button>
-              {a1}
-            </Button>
                 </div>
             </div>
             <!-- End: Basic Card -->
