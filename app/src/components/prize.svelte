@@ -3,7 +3,7 @@
 	import Button from './Button.svelte'
 	let question = 'hole von json';
   let a1 = "OK"
-  let src = '3facj.jpg';
+  import API from '../store/config';
 </script>
 
 
@@ -31,11 +31,10 @@
                 <div class="card-body">
                     <p class="m-0"> </p>
            <h2>Congrats, you have won </h2>
-           <img src={src} alt = "3malCumulus">
-            <Button>
-              {a1}
-            </Button>
-                </div>
+            <h2> </h2>
+            <a class="nav-link" href="./animation.svelte">
+            <button> OK </button></a>
+            </div>
             </div>
             <!-- End: Basic Card -->
         </div>

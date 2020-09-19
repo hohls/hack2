@@ -1,8 +1,5 @@
 
  <script>
-	import Button from './Button.svelte'
-	let question = 'hole von json';
-    let a1 = "a1 von json hole"
 	import { fade } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
 
@@ -39,6 +36,15 @@
 		transform: translate(-50%,-50%);
 		font-size: 4em;
     }
+
+    .btn-bot {
+        position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    bottom:0px;
+
+    }
     
     :global(body) {
 		background-color: #f2eee2;
@@ -51,16 +57,13 @@
 	}
 </style>
 
-<label>
-	<input type="checkbox" bind:checked={visible}>
-	visible
-</label>
-
-{#if visible}
 	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
 		<span>Animation!</span>
-	</div>
-{/if}
+    </div>
+    
+    <a class="nav-link" href="./productquiz.svelte">
+        <button class='btn-bot'>Ask Me! </button></a>
+
 
 
 
