@@ -32,7 +32,7 @@
                     <p class="m-0"> </p>
            <h2>Congrats, you have won </h2>
             <h2> </h2>
-            <a class="nav-link" href="./animation.svelte">
+            <a class="nav-link" href="./anim">
             <button> OK </button></a>
             </div>
             </div>

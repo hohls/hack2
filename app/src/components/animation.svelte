@@ -42,7 +42,7 @@
     left: 50%;
     width: 100px;
     margin-left: -50px;
-    bottom:0px;
+    bottom:120px;
 
     }
     
@@ -61,7 +61,7 @@
 		<span>Animation!</span>
     </div>
     
-    <a class="nav-link" href="./productquiz.svelte">
+    <a class="nav-link" href="./quiz">
         <button class='btn-bot'>Ask Me! </button></a>
 
 
