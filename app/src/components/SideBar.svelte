@@ -76,6 +76,10 @@
           <i class="fas fa-globe" />
           <span>Product Quiz</span>
         </Link>
+        <Link to="/animation" {getProps}>
+          <i class="fas fa-globe" />
+          <span>Animation</span>
+        </Link>
         <Link to="/spatialanchors" {getProps}>
           <i class="fas fa-map-marked-alt" />
           <span>Spatial Anchors (AR/VR)</span>
