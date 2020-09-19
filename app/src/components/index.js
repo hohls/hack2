@@ -23,12 +23,14 @@ import FormRecognizer from './azure-form-recognizer.svelte';
 import Chatbot from './azure-chatbot.svelte';
 import BingMaps from './azure-bing-maps.svelte';
 import SpatialAnchors from './azure-spatial-anchors.svelte';
+import Scanner from './Scanner.svelte'
 
 
 
 
 export {
   CardComponent,
+
   NavBar,
   SideBar,
   PageNotFound,
@@ -41,11 +43,12 @@ export {
 
   MigrosData,
   MigrosProductSearch,
-//  MigrosDiscounts,
-//  MigrosStoreLayout,
-//  MigrosPurchases,
-//  MigrosBought,
-//  MigrosRecipes,
-//  MigrosCart,
-//  MigrosLogistics,
+  Scanner
+  //  MigrosDiscounts,
+  //  MigrosStoreLayout,
+  //  MigrosPurchases,
+  //  MigrosBought,
+  //  MigrosRecipes,
+  //  MigrosCart,
+  //  MigrosLogistics,
 };

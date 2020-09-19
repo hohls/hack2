@@ -13,9 +13,8 @@
     Chatbot,
     BingMaps,
     SpatialAnchors,
+    Scanner,
   } from './components';
-
-
 
   export let url = '';
 </script>
@@ -37,6 +36,7 @@
         </Route>
         <Route path="/home" component={Home} />
 
+        <Route path="/scanner" component={Scanner} />
         <Route path="/data" component={MigrosData} />
         <Route path="/customvision" component={CustomVision} />
         <Route path="/formrecognizer" component={FormRecognizer} />
@@ -50,11 +50,8 @@
           <Route path="/scandit" component={Scandit} />
         -->
 
-
         <Route path="**" component={PageNotFound} />
       </div>
-
     </div>
   </div>
-
 </Router>
