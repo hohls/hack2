@@ -8,50 +8,100 @@ var quizTop =   {
    {
      Category: "Gemuese",
     Quiz:  [
-      {
-        question: "wie sait me?",
-        answers:["hallo", "hoi", "hoi2", "hoi3"],
-        result: "1"
-      },
-      {
-        question: "wie sait me?",
-        answers:["hallo", "hoi", "hoi2", "hoi3"],
-        result: "1"
-      }
-    ]
+    {
+      question: "how many percent water are cucumber?",
+      answers:["96%", "60%", "2%", "80%"],
+      result: "1"
     },
     {
-    Category: "Mehl",
+      question: "bananas are members of which family?",
+      answers:["Berries", "Palm", "Cactus", "Grape"],
+      result: "1"
+      },
+    {
+      question: "strawberries are members of which family?",
+      answers:["Rose", "Palm", "Cactus", "Grape"],
+      result: "1"
+    },
+    {
+      question: "how much DNA do humans share with bananas?",
+      answers:["60%", "1%", "30%", "99%"],
+      result: "1"
+    },
+    {
+      question: "calorie for calorie broccoli contains more protein than..?",
+      answers:["steak", "apple", "sugar", "coffee"],
+      result: "1"
+    },
+    {
+      question: "pistachios are actually..?",
+      answers:["fruits", "roots", "nuts", "flowers"],
+      result: "1"
+    },
+    {
+      question: "how many percent of all hazelnuts end up in Nutella?",
+      answers:["5%", "10%", "25%", "50%"],
+      result: "3"
+    }
+    ]
+    },
+
+    {
+    Category: "Fastfood",
     Quiz:  [
-        {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
+    {
+      question: "how invented the sandwich?",
+      answers:["Earl of sandwich", "Thomas Eddison", "Napoleon", "Queen Marry"],
+      result: "1"
+      },
+      {
+        question: "how many blévitas are eaten per year?",
+        answers:["500 million", "1 million", "1 million", "3"],
+        result: "1"
+        },
+          {
+          question: "how many liter migros ice tea are consumed per year?",
+          answers:["60 million", "10 million", "2 million", "30 million"],
           result: "1"
         },
-        {
-          question: "wie sait me 22222?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "3"
+          {
+        question: "in the 1800's ketchup was used as..?",
+        answers:["medicine", "poison", "food", "paint"],
+        result: "1"
         }
+
       ]
     },
-      {
+
+     {
         Category: "Milch",
         Quiz:  [
         {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
+          question: "when was chocolate seen the first time in bar form?",
+          answers:["1910", "1510", "2010", "1987"],
           result: "1"
         },
-        {
+      {
           question: "wie sait me?",
           answers:["hallo", "hoi", "hoi2", "hoi3"],
           result: "2"
-        }
+      },
+      {
+        question: "what did the aztecs used chocolate for?",
+        answers:["currency", "paint", "poison", "food"],
+        result: "1"
+      },
+      {
+        question: "where did french fries originate from?",
+        answers:["belgium", "france", "usa", "uk"],
+        result: "1"
+      }
       ]
     }
 ]
 };
+
+
   var quiz = quizTop.Quizliste;
 
 //const quiz = JSON.parse('../../data/quizquestions.json');
@@ -72,7 +122,7 @@ var quizTop =   {
 
  
  let  prod_category =  0;  
- let  prod_cat_name =  "Mehl";
+ let  prod_cat_name =  "Milch";
   let questionId = 0;
   let answerId = 0;
   let numberWins=0;
@@ -141,19 +191,19 @@ getQuestion();
                  <h2>Question , {question}?</h2>
     
                
-                <Button id=0 on:message={handleAnswer}>
+                <Button id=1 on:message={handleAnswer}>
                   {a1}
                 </Button>
 
-                <Button id=1  on:message={handleAnswer}>
+                <Button id=2  on:message={handleAnswer}>
                   {a2}
                 </Button>
 
-                <Button id=2  on:message={handleAnswer}>
+                <Button id=3  on:message={handleAnswer}>
                   {a3}
                 </Button>
 
-                <Button id=3  on:message={handleAnswer}>
+                <Button id=4  on:message={handleAnswer}>
                   {a4}
                 </Button>
                 

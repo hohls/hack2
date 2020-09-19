@@ -2,15 +2,14 @@
   import './styles.scss';
   import { Router, Link, Route } from 'svelte-routing';
   import { slide } from 'svelte/transition';
-  import Home from './Home.svelte';
-
-  import { NavBar, SideBar, PageNotFound, Redirect } from './components';
+ 
+ 
   import { Scanner, ProductQuiz, Anim, Prize } from './components';
 
   export let url = '';
 
-  let showScanner = false;
-  let showAnim = true;
+  let showScanner = true;
+  let showAnim = false;
   let showProductQuiz = false;
   let showPrize = false;
 
