@@ -41,8 +41,9 @@
     }
   }
   console.log(prod_id);
-  let product = fetchProduct(prod_id);
-  console.log(product);
+  fetchProduct(prod_id).then(function (json) {
+    console.log(json);
+  });
 </script>
 
 <style>
