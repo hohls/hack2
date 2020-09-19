@@ -14,7 +14,11 @@
     BingMaps,
     SpatialAnchors,
     Scanner,
+    ProductQuiz,
+    Anim,
+    Prize,
   } from './components';
+  import Animation from './components/animation.svelte';
 
   export let url = '';
 </script>
@@ -43,6 +47,9 @@
         <Route path="/chatbot" component={Chatbot} />
         <Route path="/maps" component={BingMaps} />
         <Route path="/spatialanchors" component={SpatialAnchors} />
+        <Route path="/quiz" component={ProductQuiz} />
+        <Route path="/anim" component={Anim} />
+        <Route path="/prize" component={Prize} />
 
         <Route path="/productsearch" component={MigrosProductSearch} />
 
