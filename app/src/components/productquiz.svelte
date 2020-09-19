@@ -1,8 +1,6 @@
 <script>
 import { createEventDispatcher } from 'svelte';
 import Button from './Button.svelte';
-
-import prod_id_gl from './animation.svelte';
  
  
 var quiz =   {
@@ -74,8 +72,8 @@ var quiz =   {
 
 
 	prod_id = 10; // event.detail.prod_id;
-  prod_category =  0;  
-  prod_cat_name =  "Mehl";
+ let  prod_category =  0;  
+ let  prod_cat_name =  "Mehl";
 
   for (var i = 0; i < quiz.length; i++){
   if (quiz[i].Category == prod_cat_name){

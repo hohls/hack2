@@ -1,18 +1,19 @@
  <script>
 	import { fade } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
- 
-	 export let prod_id;
-
-import { createEventDispatcher } from 'svelte';
+ import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
 
+ 
  function closeMe(){
+	 
 	dispatch('message', {
         text: 1
     });
  };
 
+
+export let prod_id;
 	let visible = true;
 
 	function spin(node, { duration }) {
@@ -70,14 +71,17 @@ const dispatch = createEventDispatcher();
 		color: #bfc2c7;
 	}
 </style>
+
+
 <div class="component">
 	<div class="centered" in:spin="{{duration: 8000}}" out:fade>
 		<span>Animation!</span>
     </div>
-        <button class='btn-bot' on:click{closeMe}>
-		Ask Me! 
+       
+ 		<button on:click={closeMe}>
+		 Ask Me! 
 		 </button>
- 
+
  </div>
 
 

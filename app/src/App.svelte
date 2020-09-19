@@ -26,7 +26,7 @@ let win ;
 
 
  
- function closeAnim() {
+ function closeAnim(event) {
    showScanner = false;
   showAnim = false; 
   showProductQuiz=true };
