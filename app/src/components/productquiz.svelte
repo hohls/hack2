@@ -76,16 +76,16 @@ var quizTop =   {
      {
         Category: "Milch",
         Quiz:  [
+           {
+          question: "How many percentage points of Rivella Red is milk serum ?",
+          answers:["35%", "38%", "52%", "95%"],
+          result: "1"
+        },
         {
           question: "when was chocolate seen the first time in bar form?",
           answers:["1910", "1510", "2010", "1987"],
           result: "1"
         },
-      {
-          question: "wie sait me?",
-          answers:["hallo", "hoi", "hoi2", "hoi3"],
-          result: "2"
-      },
       {
         question: "what did the aztecs used chocolate for?",
         answers:["currency", "paint", "poison", "food"],
@@ -188,10 +188,10 @@ getQuestion();
                     <h6 class="text-primary m-0 font-weight-bold">Product Quiz</h6>
                 </div>
                 <div class="card-body">
-                 <h2>Question , {question}?</h2>
+                 <h2 style="color:orange" >Question , {question} </h2>
     
                
-                <Button id=1 on:message={handleAnswer}>
+                <Button  id=1 on:message={handleAnswer}>
                   {a1}
                 </Button>
 
