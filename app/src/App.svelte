@@ -38,10 +38,11 @@ let win ;
     };
 
 	function handleWin(event) {
-		win = event.detail.text;
+    win = event.detail.text;
+     
    showScanner = false; 
    showProductQuiz = false; 
-   showPrize=true
+   showPrize=true;
     }
 
 </script>
@@ -70,7 +71,7 @@ let win ;
 
    {#if showPrize}
     <div transition:slide|local>
-      <Prize />
+      <Prize numberWins=win />
     </div>
   {/if}
 

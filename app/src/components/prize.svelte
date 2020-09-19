@@ -3,6 +3,7 @@
 	import Button from './Button.svelte'
 	let question = 'hole von json';
   let a1 = "OK"
+  let numberWins;
   import API from '../store/config';
 
    export let closeHandler = () => {};
@@ -35,7 +36,7 @@
                 <div class="card-body">
                     <p class="m-0"> </p>
            <h2>Congrats, you have won </h2>
-            <h2> </h2>
+            <h2> {numberWins} x </h2>
             <a class="nav-link" href="./anim">
             <button> OK </button></a>
             </div>
