@@ -75,34 +75,44 @@ var quizTop =   {
  let  prod_category =  0;  
  let  prod_cat_name =  "Mehl";
   let questionId = 0;
+  let answerId = 0;
+  let numberWins=0;
 
+  function getQuestion(){
   //to do loop for next questionId
   for (var i = 0; i < quiz.length; i++){
   if (quiz[i].Category == prod_cat_name){
 
     question = quiz[i].Quiz[questionId].question;
 
-
       a1 = quiz[i].Quiz[questionId].answers[0];
       a2 = quiz[i].Quiz[questionId].answers[1];
       a3 = quiz[i].Quiz[questionId].answers[2];
       a4 = quiz[i].Quiz[questionId].answers[3];
       
-      
+      answerId=quiz[i].Quiz[questionId].result;
       user_answer = quiz[i].Quiz[questionId].result;
-      
+      break;
     }
-	};
+  };
+};
+getQuestion();
  
 
 	function handleAnswer(event) {
 		var answer_id = event.detail.id;
-    if(1) {//user_answer == answer_id){
-         dispatch('message', {
-        text: 'win',
+    if(answer_id==answerId) {//user_answer == answer_id){
+      questionId++;
+      numberWins++;
+      getQuestion();
+    
+    
+    }else{
+      dispatch('message', {
+        text: numberWins,
         prod_id: prod_id
-    });   
-    }
+    });
+  }
     
 	}
 
@@ -133,23 +143,23 @@ var quizTop =   {
                     <h6 class="text-primary m-0 font-weight-bold">Product Quiz</h6>
                 </div>
                 <div class="card-body">
-                 <h2>Question 1, {question}?</h2>
+                 <h2>Question , {question}?</h2>
 
               
                
-                <Button on:message={handleAnswer}>
+                <Button id=0 on:message={handleAnswer}>
                   {a1}
                 </Button>
 
-                <Button on:message={handleAnswer}>
+                <Button id=1 on:message={handleAnswer}>
                   {a2}
                 </Button>
 
-                <Button on:message={handleAnswer}>
+                <Button id=2 on:message={handleAnswer}>
                   {a3}
                 </Button>
 
-                <Button on:message={handleAnswer}>
+                <Button id=3 on:message={handleAnswer}>
                   {a4}
                 </Button>
                 
